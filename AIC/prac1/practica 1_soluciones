@@ -1,0 +1,43 @@
+--Ejercicio 1 
+Ejecucuión de Scalar()   |      Tstd(user+sys) =  0.773  
+Ejecución de ScalarSEE() |      Tssec(user+sys) = 0.661   
+Ejecución para sobrecarga|      Tload(user+sys) = 0.518
+
+S = tstd −tload / tsse −tload = 0.773 - 0.518 / 0.661 -0.518 = 0.255 / 0.143 = 1.7
+
+--OBTENER LA FRACCIÓN DE TIEMPO LOCAL (F) 
+
+S′ = Tmat−std / Tmat−sse = 3.55 / 2.416 = 1.469
+
+Tmat_std = 3.550
+Tmat_sec = 2.416
+
+S′ = 1 / 1 − F + F/S -> 1.469 = 1 / 1 - F + F/1.7
+
+F = 0.69
+
+Calculo experimental de la fraccion de tiempo local (Fexp)
+
+Tmat_res = 0.852
+
+Fexp = (tmat−std −tmat−res) / tmat−std = (3.550 - 0.852) / 3.550 = 0.769
+
+--Analisis de las prestaciones de las arquitecturas
+
+programa/Maquina  A     B    C
+dhrystone         5     18   0.94
+whetstone         2.5   10   0.32
+gcc               40    130  14 
+xv                4.5   15   0.87
+
+//Lo pongo en relación con B
+
+programa/Maquina  A                     B               C
+dhrystone         18/5 = 3.6 veces      18/18=1         18/0.94 = 19.4
+whetstone         2.5                   10/10=1         18/0.32 = 31.25
+gcc               40                    130/130=1       18/14   = 9.29
+xv                4.5                   15/15=1         18/0.87 = 117.2
+
+    MEDIA GEOMETRICA DE LOS TIEMPOS DE EJEUCION NORMALIZADOS A 'B'= raiz cuarta de (19.4 * 31.25 * 9.29 * 17.2 ) = 17.58
+    
+    Solucion: C es 17.58 veces más rápido que B
