@@ -1,0 +1,47 @@
+ 1. Este programa esta almacenado en el fichero apxpy.s. Riesgos de datos mediante ciclos de
+parada y los de control(salto) mediante 3 ciclos de parada //CON STALLS
+ 
+ 
+-La contribucion de la primera iteracion (desde que empieza el bucle) al tiempo de ejecucion comprende desde el ciclo 8 al ciclo 29 (donde empieza otra vez la 1ª Instruccion de loop).
+
+-El numero de ciclos de reloj consumido por una iteracion del bucle es de 29 - 8 = 21
+ciclos si el salto es efectivo y de ciclos si el salto no es efectivo 21 ya que no tenemo spolítica de salto.
+
+Los ciclos de parada son ciclos 11(en bucle) , de los cuales los ciclos de parada por riesgos de datos son ciclos 8 y los ciclos de parada por riesgos de control son 3 .
+
+El bucle ejecuta 10 instrucciones.
+
+El CPI alcanzado es de 2.1 .
+
+
+2. Seguidamente, ejecutaremos de nuevo el programa cambiando la resoluci  ́on de ries-
+gos de control a predict-not-taken con tres ciclos de penalizaci  ́on:
+
+
+-La contribucion de la primera iteracion (desde que empieza el bucle) al tiempo de ejecucion comprende desde el ciclo 8 al ciclo 29 (donde empieza otra vez la 1ª Instruccion de loop).
+
+-El numero de ciclos de reloj consumido por una iteracion del bucle es de 29 - 8 = 21
+ciclos si el salto es efectivo y de ciclos si el salto no es efectivo 16(hasta princiio NOP) de salto.
+
+-Los ciclos de parada son 8(en bucle) ciclos , de los cuales los ciclos de parada por riesgos de datos son ciclos 8 y los ciclos de parada por riesgos de control son 0 .
+
+El bucle ejecuta 10 instrucciones.
+
+El CPI alcanzado es de 2.1 .
+
+3. A continuaci  ́on, manteniendo la resoluci  ́on de los riesgos de control mediante predict-
+not-taken, modificaremos la configuraci  ́on del simulador para que los riesgos de da-
+tos se resuelvan mediante cortocircuitos:
+
+-La contribucion de la primera iteracion (desde que empieza el bucle) al tiempo de ejecucion comprende desde el ciclo 6 al ciclo 21 (donde empieza otra vez la 1ª Instruccion de loop).
+
+-El numero de ciclos de reloj consumido por una iteracion del bucle es de 21 - 6 = 15
+ciclos si el salto es efectivo y de ciclos si el salto no es efectivo 12 de salto.
+
+-Los ciclos de parada son 2(en bucle) ciclos , de los cuales los ciclos de parada por riesgos de datos son ciclos 2 y los ciclos de parada por riesgos de control son 0 .
+
+El bucle ejecuta 10 instrucciones.
+
+El CPI alcanzado es de 15/10 = 1.5 .
+
+Realizacion de modificaciones en el codigo
